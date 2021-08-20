@@ -7,7 +7,7 @@ html{
 }
 
 body{
-    color: #090909;
+    color: var(--text-color);
 }
 
 a{
@@ -19,11 +19,11 @@ a{
 }
 
 .card-category{
-    color: #d73953;
+    color: var(--color-primary);
 }
 
 .section-tagline{
-    color: #d73953;
+    color: var(--color-primary);
 }
 
 /*
@@ -36,5 +36,5 @@ a{
     --color-white: #ffffff;
     --color-light-grey: #f3f3f3;
     --color-dark-grey: #353535;
-    --text-color: #090909;
+    --text-color: var(--color-black);
 }
