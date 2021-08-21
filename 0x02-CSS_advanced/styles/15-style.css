@@ -73,6 +73,11 @@ a:active{
     text-transform: var(--section-tagline-transform);
     font-weight: var(--font-weight-bold);
 }
+
+.box {
+    box-sizing: content-box;
+}
+
 /*
  Variables 
 */
