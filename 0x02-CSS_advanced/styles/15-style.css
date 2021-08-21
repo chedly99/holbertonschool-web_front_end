@@ -74,8 +74,8 @@ a:active{
     font-weight: var(--font-weight-bold);
 }
 
-.box {
-    box-sizing: content-box;
+*, *:before, *:after {
+    box-sizing: border-box;
 }
 
 /*
