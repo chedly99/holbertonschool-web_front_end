@@ -6,7 +6,7 @@
 /*# sourceMappingURL=normalize.min.css.map */
 
 
-*, *:before, *:after {
+*, *:before, *:after{
     box-sizing: border-box;
 }
 
@@ -102,65 +102,67 @@ a:active{
 }
 
 /*
- Variables 
+## Variables ##
 */
-
 :root{
 /*
-    Colors
+    colors
 */
-    --color-primary: #d73953;
-    --color-black: #090909;
-    --color-white: #ffffff;
-    --color-light-grey: #f3f3f3;
-    --color-dark-grey: #353535;
-    --text-color: var(--color-black);
+     --color-primary: #d73953;
+     --color-black: #090909;
+     --color-white: #ffffff;
+     --color-light-grey: #f3f3f3;
+     --color-dark-grey: #353535;
+
+     --text-color: var(--color-black);
+     --section-title-color: var(--color-black);
     
+
 /*
     fonts
 */
-    --font-family-base: 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'; 
-    --font-family-title: 'Raleway', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
+    
+     --font-family-base: 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'; 
+     --font-family-title: 'Raleway', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
 
 /*
-    font size
+    size
 */
-    --font-size-small: 1.2rem;
-    --font-size-medium: 1.6rem;
-    --font-size-large: 1.8rem;
-    --font-size-x-large: 2.3rem;
-    --font-size-xx-large: 4.8rem;
+     --font-size-small: 1.2rem; 
+     --font-size-medium: 1.6rem;
+     --font-size-large: 1.8rem;
+     --font-size-x-large: 2.3rem;
+     --font-size-xx-large: 4.8rem;
 
 /*
-    font weight    
+    weigh
 */
-    --font-weight-regular: 400;
-    --font-weight-bold: 700;
+     --font-weight-regular: 400;
+     --font-weight-bold: 700;
+
+     --section-tagline-transform: uppercase;
+
 
 /*
-    line heights
+    lines
 */
     --line-height-small: 1.2;
     --line-height-base: 1.5;
     --line-height-big: 1.8;
+
 /*
-    centering titles
+    align
 */
     --section-header-align: center;
+    --section-footer-align: center;
 
 /*
-    tagline styles
-*/
-    --section-tagline-transform: uppercase;
-
-/*
-    more title styling 
+    margins
 */
     --section-title-margin: 0;
-    --section-title-color: var(--color-black);
 
 /*
-    Adding padding to sections
+    paddings
 */
     --section-padding: 5rem 0; 
     --section-header-padding: 0 0 3rem; 
