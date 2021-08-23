@@ -101,6 +101,9 @@ a:active{
 .footer{
     padding: var(--footer-padding);
 }
+    .footer ul{
+        text-align: right;
+ }
 
 .navbar-menu{
     float: right;
@@ -155,9 +158,6 @@ ul.row{
     color: var(--text-color);
 }
 
-ul.footer{
-    text-align: right;
-}
 
 /*
 ## Variables ##
