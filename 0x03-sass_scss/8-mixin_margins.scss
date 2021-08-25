@@ -1,0 +1,12 @@
+/* Margin mixin */
+@mixin margins($do-margin){
+    margin-left: $do-margin;
+    margin-right: $do-margin;
+}
+
+body{
+    @include margins(10px);
+}
+div{
+    @include margins(15px);
+}
