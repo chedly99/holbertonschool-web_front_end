@@ -185,7 +185,6 @@
     list-style: none;
   }
 
-
   [class*='col-'] {
     margin: 1rem;
   }
@@ -202,11 +201,11 @@
       ============================= */
 
   .nav {
+    display: flex;
     margin: 0;
     padding: 0;
     list-style: none;
     text-align: center;
-    display: flex;
   }
 
   .nav .nav-item {
@@ -214,6 +213,10 @@
     font-weight: var(--nav-item-font-weight);
     font-size: var(--nav-item-font-size);
     letter-spacing: var(--nav-item-letter-spacing);
+  }
+
+  .nav .nav-item + .nav-item {
+    margin: var(--nav-item-margin);
   }
 
   .nav .nav-link {
@@ -243,24 +246,20 @@
     width: 100%;
   }
 
-  .nav .nav-item + .nav-item {
-    margin: var(--nav-item-margin);
-  }
-
   /* Header
       ============================= */
 
   .header {
     padding: var(--header-padding);
-         position: relative;
-         z-index: 3;
-         background: transparent !important;
+    position: relative;
+    z-index: 3;
+    background: transparent !important;
   }
 
   .header-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   /* Footer
@@ -351,7 +350,16 @@
     margin-top: -8.5rem;
   }
 
-  .hero-homepage{
+  .section-hero .section-body {
+    padding: 10rem 4rem;
+  }
+
+  .section-hero .section-category {
+    color: var(--color-white);
+    text-transform: uppercase;
+  }
+
+  .hero-homepage {
     background-position: 75% 0;
     background-repeat: no-repeat;
     background-size: 90rem auto;
@@ -370,15 +378,6 @@
     min-height: 50vh;
   }
 
-  .section-hero .section-body{
-      padding: 10rem 4rem;
-  }
-
-  .section-hero .section-category{
-      color: var(--color-white);
-      text-transform: uppercase;
-  }
-
 
   /* Section Latest news
       ============================= */
@@ -387,20 +386,20 @@
     flex-direction: row-reverse;
   }
 
-  /* Section SERVICES 
+  /* Section SERVICES
       ============================= */
 
   .section-services .row {
-      flex-wrap: wrap;
+    flex-wrap: wrap;
   }
 
-  /* Section ABOUT US 
+  /* Section ABOUT US
       ============================= */
 
   .section-about-us [class*='col-'] {
-      align-self: center;
+    align-self: center;
   }
-  
+
   /*** 4. CARD ***/
 
   /* Card (all styles)
@@ -529,33 +528,36 @@
     z-index: -1;
   }
 
+
   /*** ARTICLE PAGE ***/
-/* Section HERO (article)
+
+  /* Section HERO (article)
     ============================= */
-    .hero-article {
-        background-size: 150rem 100rem;
-        background-position: 50% 0;
-    }
 
-    .hero-article::before {
-        content: "";
-        background: rgba(0, 0, 0, 0.8);
-        position: absolute;
-        top: 0;
-        right: 0;
-        left: 0;
-        bottom: 0;
-        z-index: 0;
-    }
+  .hero-article {
+    background-size: 150rem 100rem;
+    background-position: 50% 0;
+  }
 
-    .hero-article .section-inner {
-        text-align: center;
-        align-items: center;
-        min-height: 40hv;
-    }
+  .hero-article::before {
+    content: '';
+    background: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 0;
+  }
 
-    .hero-article .section-body {
-        position: relative;
-        padding: 7rem 0 0;
-        z-index: 2;
-    }
+  .hero-article .section-inner {
+    text-align: center;
+    align-items: center;
+    min-height: 40vh;
+  }
+
+  .hero-article .section-body {
+    position: relative;
+    padding: 7rem 0 0;
+    z-index: 2;
+  }
