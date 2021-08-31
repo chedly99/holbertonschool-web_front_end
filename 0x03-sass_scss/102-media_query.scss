@@ -1,0 +1,18 @@
+/* More queries */
+$f_size: 20px;
+$mx_w: 960px;
+
+h1 {
+	font-size: $f_size;
+
+	@for $i from 1 through 3 {
+		@media screen and (max-width: $mx_w - (320 * ($i - 1))){
+			font-size: $f_size - (2 * $i);
+			@if $i == 3 {
+				&.small {
+					color: #1D1D1D;
+				}
+			}
+		}
+	}
+}
