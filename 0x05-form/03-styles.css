@@ -667,23 +667,19 @@
     padding: 1rem 0;
     margin: 0;
   }
-
-  /* Fieldset
-      ============================= */
+  
   fieldset {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      border: none;
-      padding: 0 0 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border: 0;
+    padding: 0 0 2rem;
   }
-
-  /* Fieldset
-      ============================= */
+  
   label {
-      cursor: pointer;
-      display: block;
-      white-space: nowrap;
-      font-size: 1.4rem;
-      padding: 0 0 .5rem;
+    cursor: pointer;
+    display: block;
+    white-space: nowrap;
+    font-size: 1.4rem;
+    padding: 0 0 .5rem;
   }
