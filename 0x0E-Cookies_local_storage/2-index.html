@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create basic cookie</title>
+  </head>
+  <body>
+    <h1>Login to the website</h1>
+    <form action="">
+      <input id="firstname" type="text" placeholder="Firstname" />
+      <input id="email" type="text" placeholder="Email" />
+      <button onclick="setCookies()">log me in</button>
+    </form>
+
+    <h1>Cookies</h1>
+
+    <button onclick="showCookies()">Show the cookies</button>
+
+    <script type="application/javascript">
+     const firstName = document.getElementById("firstname");
+    const email = document.getElementById("email");
+
+      const setCookies = () => {
+       
+        let date = new Date();
+        date.setTime(date.getTime() + 10 * 24 * 60 * 60 * 1000);
+        document.cookie = `firstname=${firstName.value};`;
+        document.cookie = `email=${email.value};`;
+        document.cookie = `expires=${date.toGMTString()};`;
+      };
+
+      const getCookie = (name) => {
+          let coo = `${name}=`;
+          let splittedCookie = document.cookie.split(';');
+          for(let i=0; i < splittedCookie.length; i++){
+
+            let cookie = splittedCookie[i];
+            while (cookie.charAt(0) == ' ')
+            cookie = cookie.substring(1);
+            if(cookie.indexOf(coo) == 0){
+                return cookie.substring(coo.length, cookie.length)
+            }
+          }
+          return "";
+      }
+
+      const showCookies = () => {
+        const element = document.createElement("p");
+        element.innerHTML = `Cookies:${document.cookie}`;
+        const elementx = document.createElement("p");
+        console.log(getCookie(email))
+        elementx.innerHTML = `Email: ${getCookie('email')} - Firstname: ${getCookie('firstname')}`;
+        document.querySelector("body").appendChild(elementx);
+        document.querySelector("body").appendChild(element);
+
+      };
+
+      
+    </script>
+  </body>
+</html>

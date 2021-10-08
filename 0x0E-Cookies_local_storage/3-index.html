@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create basic cookie</title>
+  </head>
+  <body>
+      <div>
+    
+    <form action="">
+        <h2>Login to the website</h2>
+      <input id="firstname" type="text" placeholder="Firstname" />
+      <input id="email" type="text" placeholder="Email" />
+      <button onclick="setCookies()">log me in</button>
+    </form>
+    </div>
+
+    
+   
+    <script type="application/javascript">
+     const firstName = document.getElementById("firstname");
+     const email = document.getElementById("email");
+
+      const setCookies = () => {
+       
+        let date = new Date();
+        date.setTime(date.getTime() + 10 * 24 * 60 * 60 * 1000);
+        document.cookie = `firstname=${firstName.value};`;
+        document.cookie = `email=${email.value};`;
+        document.cookie = `expires=${date.toGMTString()};`;
+      };
+
+      const getCookie = (name) => {
+          let coo = `${name}=`;
+          let splittedCookie = document.cookie.split(';');
+          for(let i=0; i < splittedCookie.length; i++){
+
+            let cookie = splittedCookie[i];
+            while (cookie.charAt(0) == ' ')
+            cookie = cookie.substring(1);
+            if(cookie.indexOf(coo) == 0){
+                return cookie.substring(coo.length, cookie.length)
+            }
+          }
+          return "";
+      }
+
+      const showCookies = () => {
+        const element = document.createElement("p");
+        element.innerHTML = `Cookies:${document.cookie}`;
+        const elementx = document.createElement("p");
+        console.log(getCookie(email))
+        elementx.innerHTML = `Email: ${getCookie('email')} - Firstname: ${getCookie('firstname')}`;
+        document.querySelector("body").appendChild(elementx);
+        document.querySelector("body").appendChild(element);
+
+      };
+
+      const showForm = () => {
+       let form = document.querySelector("form");
+       form.style.display = "block";
+      }
+
+      const hideForm = () => {
+        let form = document.querySelector("form");
+       form.style.display = "none";
+      }
+
+    const deleteCookiesAndShowForm = () => {
+      
+        document.cookie = "firstname= ;";
+        document.cookie = "email= ;";
+        document.cookie = "expires = Thu, 01 Jan 1970 00:00:00 GMT";
+        showForm();
+    }
+    
+    const showWelcomeMessageOrForm = () => {
+        if(!getCookie('firstname') && !getCookie('email')){
+            showForm();
+        }
+        else {
+           const divisionToReplace = document.querySelector('body > div');
+           const newDivision = document.createElement('h1');
+           newDivision.innerHTML = `Welcome ${getCookie('firstname')} (logout)`
+
+           newDivision.addEventListener('click', () => {
+            newDivision.style.display = "none";
+            deleteCookiesAndShowForm()
+           })
+           hideForm();
+
+           document.querySelector('body').appendChild(newDivision);
+        }
+    }
+    showWelcomeMessageOrForm() 
+    </script>
+  </body>
+</html>
