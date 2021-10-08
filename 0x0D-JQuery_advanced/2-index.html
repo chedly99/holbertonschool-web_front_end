@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Task 0</title>
+  </head>
+
+  <body>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+      crossorigin="anonymous"
+    ></script>
+
+    <script type="application/javascript">
+      const createFamilyTree = () => {
+        let tableau = $(`
+          <table>
+            <tr><th style="font-size:30px;">Firstname</th><th style="font-size:30px;">lastname</th></tr>
+            <tr style="font-size:24px;"><th style="text-align:left">Guillaume</th><th style="text-align:left">Salva</th></tr>
+            <tr style="font-size:24px;"><th style="text-align:left">Paulette</th><th style="text-align:left">Salva</th></tr>
+            <tr style="font-size:24px;"><th style="text-align:left">Antoine</th><th style="text-align:left">Salva</th></tr>  
+            </table>
+                `);
+        $("body").append(tableau);
+      };
+      createFamilyTree();
+    </script>
+  </body>
+</html>
